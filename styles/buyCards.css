@@ -1,0 +1,405 @@
+/********** Reset CSS **********/
+:root {
+  --primary-color: #306bb3;
+  --link-color: #fff;
+  --text-black: #1a202c;
+  --font: "Plus Jakarta Sans", sans-serif;
+  --font-size: 16px;
+  --container-width: 1200px;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/********** Menu Hamburguesa**********/
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 0;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  overflow-y: auto;
+  background-color: var(--primary-color);
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  transition: transform 0.3s opacity 0.5s ease;
+}
+
+.menu-panel.is-active {
+  transform: translate(0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel-btn {
+  position: fixed;
+  z-index: 999;
+  bottom: 1vh;
+  right: 1vw;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.menu {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.menu a {
+  padding: 2rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--link-color);
+  transition: all 0.3s ease;
+}
+
+.menu a:hover {
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: var(--link-color);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: inherit;
+}
+
+/**************Site Styles***********/
+.btn-dark-mode {
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.1rem 0.4rem 0.1rem;
+  cursor: pointer;
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  background-color: var(--link-color);
+  color: var(--primary-color);
+}
+
+.header-logo {
+  width: 20%;
+  padding-top: 1rem;
+}
+
+.section {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.title {
+  color: #486284;
+  margin: 0;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.subtitle {
+  color: var(--text-black);
+  font-weight: 500;
+  font-size: 1.12rem;
+}
+
+.links-type-pokemon {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.links-type-pokemon a {
+  color: var(--text-black);
+  font-size: 1.4rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 21.5vw;
+  text-decoration: none;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #486284;
+}
+
+.line {
+  width: 85%;
+  height: 2px;
+  color: #486284;
+}
+
+.links-type-pokemon a:hover {
+  font-weight: bold;
+  border-bottom-color: #000;
+  border-bottom-width: 3px;
+}
+
+.links-type-pokemon li {
+  list-style: none;
+}
+
+.container-pokemons {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  justify-items: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  /* width: 10rem;
+  height: 16rem; */
+  width: 15rem;
+  height: 19rem;
+  background-color: #dee5ed;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  font-family: var(--font);
+  font-weight: 600;
+  height: 2rem;
+}
+
+.name p::first-letter {
+  text-transform: uppercase;
+}
+
+.back-pokemon {
+  background-color: #fff;
+  width: 11rem;
+  height: 11rem;
+  /* width: 7rem;
+  height: 6rem; */
+  margin: 0 auto;
+  border-radius: 0.7rem;
+}
+
+.back-pokemon img {
+  width: 11rem;
+  height: 11rem;
+}
+
+.power {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  height: 3rem;
+}
+
+.power button {
+  /* width: 5rem;
+  height: 2rem; */
+  width: 6rem;
+  height: 10rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  height: auto;
+  background-color: #306bb3;
+  border: none;
+  color: #fff;
+}
+/**************Footer***********/
+footer {
+  padding: 3rem;
+  padding-right: 5rem;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 3.5rem;
+}
+
+.footer-content h4 {
+  color: var(--link-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.footer-content li {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.footer-content li a {
+  display: block;
+  color: var(--link-color);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+.footer-content li a:hover {
+  transform: translateY(-3px) translateX(-5px);
+  font-weight: bold;
+}
+
+.footer-content p {
+  width: 60%;
+  color: var(--link-color);
+  font-size: 1rem;
+  line-height: 1.8rem;
+  margin: 1.25rem 0;
+}
+
+.icons {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.icons i {
+  font-size: 1.4rem;
+  color: var(--link-color);
+  margin-right: 1rem;
+  transition: all 0.5s ease;
+}
+
+.icons i:hover {
+  transform: translateY(-5px);
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .panel-btn {
+    display: none;
+  }
+
+  /* body {
+    display: grid;
+    grid-template-rows: 15vh 150vh 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  .header-container {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .footer-container {
+    grid-area: footer;
+  } */
+
+  .menu-panel {
+    position: static;
+    transform: translate(0, 0);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu ul {
+    display: flex;
+  }
+
+  .menu a {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .menu a:hover {
+    text-decoration: underline;
+    background-color: var(--primary-color);
+    color: var(--link-color);
+  }
+
+  .menu-container {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .subtitle {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 2.5rem;
+  }
+}

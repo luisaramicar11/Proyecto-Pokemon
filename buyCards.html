@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.2.1/hamburgers.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles/buyCards.css" />
+    <title>Pokemon</title>
+  </head>
+  <body data-dark>
+    <header class="header-container">
+      <div class="header-logo">
+        <img src="./assets/logo.svg" alt="Logo" />
+      </div>
+      <div class="menu-container">
+        <aside class="menu-panel">
+          <nav class="menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="buyCards.html">BuyCards</a>
+              </li>
+              <li>
+                <a href="ourBlog.html">OurBlog</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <button class="btn-dark-mode" data-dark>Dark Mode</button>
+      </div>
+    </header>
+    <button class="panel-btn hamburger hamburger--vortex" type="button">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <main>
+      <section class="section">
+        <div class="checkout-cards">
+          <p class="title">Checkout Out Pokemon Cards</p>
+          <p class="subtitle">
+            The Pokemon Go expansion for the Pokemon Trading Card Game will
+            release soon.
+          </p>
+        </div>
+        <ul class="links-type-pokemon">
+          <li><a id="all" href="">All</a></li>
+          <li><a id="flying" href="">Air</a></li>
+          <li><a id="fire" href="">Fire</a></li>
+          <li><a id="water" href="">Water</a></li>
+          <div class="line"></div>
+        </ul>
+
+        <article class="container-pokemons"></article>
+        <nav class="links-paginacion"></nav>
+      </section>
+    </main>
+
+    <footer class="footer-container">
+      <div class="footer-content">
+        <img src="assets/logo.svg" alt="Logo" />
+        <p>
+          Our vision is to provide convenience and help increase your sales
+          business
+        </p>
+        <div class="icons">
+          <li><i class="fa-brands fa-square-facebook"></i></li>
+          <li><i class="fa-brands fa-square-twitter"></i></li>
+          <li><i class="fa-brands fa-square-instagram"></i></li>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <h4>About</h4>
+        <li><a href="">How it works</a></li>
+        <li><a href="">Featured</a></li>
+        <li><a href="">Partnership</a></li>
+        <li><a href="">Bussiness Relation</a></li>
+      </div>
+
+      <div class="footer-content">
+        <h4>Community</h4>
+        <li><a href="">Events</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Podcast</a></li>
+        <li><a href="">Invite a friend</a></li>
+      </div>
+
+      <div class="footer-content">
+        <h4>Socials</h4>
+        <li><a href="">Discord</a></li>
+        <li><a href="">Instagram</a></li>
+        <li><a href="">Twitter</a></li>
+        <li><a href="">Facebook</a></li>
+      </div>
+    </footer>
+    <script src="./scripts/scripts.js" type="module"></script>
+  </body>
+</html>
