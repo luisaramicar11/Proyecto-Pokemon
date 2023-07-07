@@ -96,8 +96,8 @@ document.addEventListener("click", (e) => {
 export function filtrarPokemons(entrada) {
   document.addEventListener("click", (e) => {
     if (e.target.matches(entrada)) {
-      //alert(entrada);
-      //alert(e.target.id);
+      /* alert(entrada);
+      alert(e.target.id); */
 
       localStorage.setItem("selectType", e.target.id);
     }

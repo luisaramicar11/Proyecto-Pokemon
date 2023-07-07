@@ -192,6 +192,26 @@ main {
   margin-bottom: 2rem;
 }
 
+/**************Dark Theme***********/
+
+.dark-mode {
+  background-color: var(--text-black);
+  color: #fff;
+}
+
+.btn-dark-mode:hover {
+  background-color: var(--text-black);
+  color: #fff;
+}
+
+.dark-mode p {
+  color: #fff;
+}
+
+.dark-mode a {
+  color: #fff;
+}
+
 /**************Footer***********/
 footer {
   padding: 3rem;

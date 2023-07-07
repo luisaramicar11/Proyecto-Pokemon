@@ -195,6 +195,27 @@ main {
   text-align: center;
 }
 
+/**************Dark Theme***********/
+
+.dark-mode {
+  background-color: var(--text-black);
+}
+.dark-mode.btn-dark-mode {
+  color: #fff;
+}
+/* .dark-mode h2 {
+  color: #fff;
+} */
+
+.dark-mode p {
+  color: #fff;
+}
+
+.btn-dark-mode:hover {
+  background-color: var(--text-black);
+  color: #fff;
+}
+
 /**************Footer***********/
 footer {
   padding: 3rem;
