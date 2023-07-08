@@ -20,8 +20,8 @@ export async function loadPokemons(url) {
     let json = await res.json();
     let $nextLink;
 
-    //console.log(res);
-    //console.log(json);
+    console.log(res);
+    console.log(json);
 
     if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
@@ -40,9 +40,10 @@ export async function loadPokemons(url) {
               : jsonPokemon[i].pokemon.url
           ),
           pokemon = await res.json();
+        console.log(pokemon);
 
         if (!res.ok) throw { status: res.status, statusText: res.statusText };
-        console.log(pokemon.types[0].type.name);
+        //console.log(pokemon.types[0].type.name);
 
         $template += `
         <div class="card" >
@@ -61,7 +62,7 @@ export async function loadPokemons(url) {
         `;
       } catch (err) {
         console.log(err);
-        let message = err.statusText || "Ocurriò un error";
+        let message = err.statusText || "Ocurrió un error";
         $template.innerHTML = `<div class="card">
             <div class="name">
               <p><b>Name</b></p>
@@ -89,7 +90,7 @@ export async function loadPokemons(url) {
     $totalCards.innerHTML = `${$card.length} Cards`;
   } catch (err) {
     //console.log(err);
-    let message = err.statusText || "Ocurriò un error";
+    let message = err.statusText || "Ocurrió  un error";
     $containerPokemons.innerHTML = `<p> Error ${err.status}:${message}</p>`;
   }
 }
