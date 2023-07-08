@@ -126,7 +126,7 @@ main {
   border-radius: 0.2rem;
   padding: 0.4rem 0.1rem 0.4rem 0.1rem;
   cursor: pointer;
-  width: 6rem;
+  width: 7rem;
   height: 2rem;
   border: none;
   font-weight: 500;
@@ -203,15 +203,18 @@ main {
 }
 
 .card {
-  /* width: 10rem;
-  height: 16rem; */
-  width: 15rem;
+  width: 13rem;
   height: 19rem;
   background-color: #dee5ed;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .name {
@@ -233,8 +236,6 @@ main {
   background-color: #fff;
   width: 11rem;
   height: 11rem;
-  /* width: 7rem;
-  height: 6rem; */
   margin: 0 auto;
   border-radius: 0.7rem;
 }
@@ -253,8 +254,6 @@ main {
 }
 
 .power button {
-  /* width: 5rem;
-  height: 2rem; */
   width: 6rem;
   height: 10rem;
   padding: 0.5rem;
@@ -329,6 +328,32 @@ footer {
   font-weight: bold;
 }
 
+.btn-show-more {
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  height: 3rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--primary-color);
+  color: var(--link-color);
+  font-size: 1rem;
+  margin-right: 33vw;
+}
+
+.menu-container button {
+  margin: 1.2rem;
+}
+
+.totalCards {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.container-total-cards {
+  display: flex;
+  justify-content: flex-end;
+}
 /**************Dark Theme***********/
 
 .dark-mode {
@@ -342,6 +367,18 @@ footer {
 
 .dark-mode a {
   color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-width: 1px;
+}
+
+.dark-mode i {
+  color: #000;
+}
+
+.dark-mode a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-width: 3px;
 }
 
 .dark-mode .name p {
@@ -361,32 +398,14 @@ footer {
   color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+.dark-mode .totalCards {
+  color: var(--primary-color);
+}
+
+@media screen and (min-width: 1024px) {
   .panel-btn {
     display: none;
   }
-
-  /* body {
-    display: grid;
-    grid-template-rows: 15vh 150vh 1fr;
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-
-  .header-container {
-    grid-area: header;
-  }
-
-  main {
-    grid-area: main;
-  }
-
-  .footer-container {
-    grid-area: footer;
-  } */
 
   .menu-panel {
     position: static;
@@ -430,9 +449,9 @@ footer {
     width: 50%;
   }
 
-  footer {
+  .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
     gap: 2.5rem;
   }
 }

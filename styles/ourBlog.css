@@ -126,7 +126,7 @@ main {
   border-radius: 0.2rem;
   padding: 0.4rem 0.1rem 0.4rem 0.1rem;
   cursor: pointer;
-  width: 6rem;
+  width: 7rem;
   height: 2rem;
   border: none;
   font-weight: 500;
@@ -195,6 +195,14 @@ main {
   text-align: center;
 }
 
+.menu-container button {
+  margin: 1.2rem;
+}
+
+.container-img {
+  display: flex;
+  justify-content: center;
+}
 /**************Dark Theme***********/
 
 .dark-mode {
@@ -203,9 +211,6 @@ main {
 .dark-mode.btn-dark-mode {
   color: #fff;
 }
-/* .dark-mode h2 {
-  color: #fff;
-} */
 
 .dark-mode p {
   color: #fff;
@@ -280,27 +285,12 @@ footer {
   font-weight: bold;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .panel-btn {
     display: none;
   }
 
-  body {
-    display: grid;
-    grid-template-rows: 15vh 110vh 1fr;
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-
-  .header-container {
-    grid-area: header;
-  }
-
   main {
-    grid-area: main;
     padding: 3rem;
   }
 
@@ -381,9 +371,9 @@ footer {
     width: 50%;
   }
 
-  footer {
+  .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
     gap: 2.5rem;
   }
 }

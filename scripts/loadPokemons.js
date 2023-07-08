@@ -1,6 +1,9 @@
+let $template = "";
+let numeroCards = 0;
 export async function loadPokemons(url) {
   let $containerPokemons = document.querySelector(".container-pokemons"),
-    $linksPaginacion = document.querySelector(".links-paginacion");
+    $linksPaginacion = document.querySelector(".links-paginacion"),
+    $totalCards = document.querySelector(".totalCards");
 
   if (localStorage.getItem("selectType") === null)
     localStorage.setItem("selectType", "all");
@@ -16,8 +19,6 @@ export async function loadPokemons(url) {
 
     let res = await fetch(path),
       json = await res.json(),
-      $template = "",
-      $prevLink,
       $nextLink;
 
     //console.log(res);
@@ -32,6 +33,7 @@ export async function loadPokemons(url) {
 
     for (let i = 0; i < jsonPokemon.length; i++) {
       //console.log(json.results[i]);
+      console.log(jsonPokemon.length);
       try {
         let res = await fetch(
             localStorage.getItem("selectType") === "all"
@@ -75,11 +77,22 @@ export async function loadPokemons(url) {
             </div>
           </div>`;
       }
+      //console.log(jsonPokemon.length);
     }
     $containerPokemons.innerHTML = $template;
-    $prevLink = json.previous ? `<a href="${json.previous}">⏮️</a>` : "";
-    $nextLink = json.next ? `<a href="${json.next}">⏭️</a>` : "";
-    $linksPaginacion.innerHTML = $prevLink + " " + $nextLink;
+    //console.log($containerPokemons);
+    let $card = document.querySelectorAll(".card");
+    console.log($card.length);
+    //console.log(jsonPokemon.length);
+    //console.log($containerPokemons);
+    //$prevLink = json.previous ? `<a href="${json.previous}">⏮️</a>` : "";
+    //$nextLink = json.next ? `<a href="${json.next}">⏭️</a>` : "";
+    console.log(json.next);
+    $nextLink = json.next
+      ? `<a class="btn-show-more" href="${json.next}">Show more cards</a>`
+      : "";
+    $linksPaginacion.innerHTML = $nextLink;
+    $totalCards.innerHTML = `${$card.length} Cards`;
   } catch (err) {
     //console.log(err);
     let message = err.statusText || "Ocurriò un error";
