@@ -357,7 +357,7 @@ footer {
 /**************Dark Theme***********/
 
 .dark-mode {
-  background-color: black;
+  background-color: var(--text-black);
   color: white;
 }
 
@@ -372,7 +372,7 @@ footer {
 }
 
 .dark-mode i {
-  color: #000;
+  color: var(--text-black);
 }
 
 .dark-mode a:hover {
@@ -382,11 +382,11 @@ footer {
 }
 
 .dark-mode .name p {
-  color: #000;
+  color: var(--text-black);
 }
 
 .dark-mode .power p {
-  color: #000;
+  color: var(--text-black);
 }
 
 .dark-mode .btn-dark-mode {

@@ -1,6 +1,6 @@
 export default function darkTheme(btn, classDark) {
-  const $selectors = document.querySelectorAll("[data-dark]"),
-    $btn = document.querySelector(btn);
+  const $selectors = document.querySelectorAll("[data-dark]");
+  const $btn = document.querySelector(btn);
 
   const darkMode = () => {
     $selectors.forEach((el) => {

@@ -224,7 +224,7 @@ main {
 }
 
 .dark-mode .container-links a {
-  color: #000;
+  color: var(--text-black);
 }
 
 /**************Footer***********/

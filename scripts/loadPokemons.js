@@ -1,25 +1,24 @@
 let $template = "";
-let numeroCards = 0;
 export async function loadPokemons(url) {
-  let $containerPokemons = document.querySelector(".container-pokemons"),
-    $linksPaginacion = document.querySelector(".links-paginacion"),
-    $totalCards = document.querySelector(".totalCards");
+  let $containerPokemons = document.querySelector(".container-pokemons");
+  let $linksPaginacion = document.querySelector(".links-paginacion");
+  let $totalCards = document.querySelector(".totalCards");
 
   if (localStorage.getItem("selectType") === null)
     localStorage.setItem("selectType", "all");
 
   let pokeAPIType = "https://pokeapi.co/api/v2/type";
   try {
-    $containerPokemons.innerHTML = `<img class="loader" src="./assets/loader.svg" alt="Cargando...">`;
+    $containerPokemons.innerHTML = `<img src="./assets/loader.svg" alt="Cargando...">`;
 
     let path =
       localStorage.getItem("selectType") === "all"
         ? url
         : `${pokeAPIType}/${localStorage.getItem("selectType")}`;
 
-    let res = await fetch(path),
-      json = await res.json(),
-      $nextLink;
+    let res = await fetch(path);
+    let json = await res.json();
+    let $nextLink;
 
     //console.log(res);
     //console.log(json);
@@ -33,7 +32,7 @@ export async function loadPokemons(url) {
 
     for (let i = 0; i < jsonPokemon.length; i++) {
       //console.log(json.results[i]);
-      console.log(jsonPokemon.length);
+
       try {
         let res = await fetch(
             localStorage.getItem("selectType") === "all"
@@ -77,17 +76,12 @@ export async function loadPokemons(url) {
             </div>
           </div>`;
       }
-      //console.log(jsonPokemon.length);
     }
     $containerPokemons.innerHTML = $template;
-    //console.log($containerPokemons);
+
     let $card = document.querySelectorAll(".card");
     console.log($card.length);
-    //console.log(jsonPokemon.length);
-    //console.log($containerPokemons);
-    //$prevLink = json.previous ? `<a href="${json.previous}">⏮️</a>` : "";
-    //$nextLink = json.next ? `<a href="${json.next}">⏭️</a>` : "";
-    console.log(json.next);
+
     $nextLink = json.next
       ? `<a class="btn-show-more" href="${json.next}">Show more cards</a>`
       : "";
